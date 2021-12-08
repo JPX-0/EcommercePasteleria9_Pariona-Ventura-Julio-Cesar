@@ -1,0 +1,71 @@
+// █▄ ▄█ ██▀ ▄▀▄ ▄▀▀ █ █ █▀▄ ██▀ ▄▀▀ 
+// █ ▀ █ █▄▄ █▀█ ▄█▀ ▀▄█ █▀▄ █▄▄ ▄█▀ 
+$breakpoints: (
+  xs: 580px,
+  sm: 767px,
+  md: 991px,
+  h-xs: 360px,
+  h-sm: 450px,
+  h-md: 540px,
+);
+@mixin responsive($breakpoint) {
+  @media (max-width: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+@mixin responsiveHeight($breakpoint) {
+  @media (max-height: map-get($breakpoints, $breakpoint)) {
+    @content;
+  }
+}
+
+// ▄▀▄ █▄ █ █ █▄ ▄█ ▄▀▄ ▀█▀ █ ▄▀▄ █▄ █ ▄▀▀ 
+// █▀█ █ ▀█ █ █ ▀ █ █▀█  █  █ ▀▄▀ █ ▀█ ▄█▀ 
+@keyframes textCargando {
+  0% {
+    content: "Cargando";
+  }
+  33% {
+    content: "Cargando.";
+  }
+  66% {
+    content: "Cargando..";
+  }
+  100% {
+    content: "Cargando...";
+  }
+}
+@keyframes btnShop {
+  0% {
+    transform: rotate(0);
+  }
+  16% {
+    transform: rotate(-10deg);
+  }
+  48% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(-10deg);
+  }
+  96% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes modalAlert {
+  0% {
+    transform: scale(0);
+  }
+  55% {
+    transform: scale(1.1);
+  }
+  85% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
